@@ -25,7 +25,6 @@ public class ManualInputController implements Initializable {
 
     public TextField keyTextField;
     public Button applyKeyButton;
-    public AES aes;
     public Button randomKeyButton;
     public Button decryptButton;
     public Button encryptButton;
@@ -35,6 +34,8 @@ public class ManualInputController implements Initializable {
     public TextArea rawDataAsBytesArea;
     public TextArea decipheredAsBytesField;
     public MenuItem fileModeMenuItem;
+
+    AES aes;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -46,9 +47,8 @@ public class ManualInputController implements Initializable {
         });
     }
 
-    public void createAESInstance(ActionEvent actionEvent) throws Exception {
-        // applyKey calls this method ( knowing the key we can create AES instance )
-        byte[] key = Utils.hexStringToByteArray(keyTextField.getText());
+    public void createAES(ActionEvent actionEvent) throws Exception {
+        byte[] key = aes.hexStringToByteArray(keyTextField.getText());
         aes = new AES(key);
         encryptButton.setDisable(false);
         decryptButton.setDisable(false);
@@ -66,17 +66,17 @@ public class ManualInputController implements Initializable {
 
     public void encryptText(ActionEvent actionEvent) {
 
-        rawDataAsBytesArea.setText(Utils.bytesToHex(rawDataField.getText().getBytes(StandardCharsets.UTF_8)));
+        rawDataAsBytesArea.setText(aes.bytesToHex(rawDataField.getText().getBytes(StandardCharsets.UTF_8)));
         byte[] encoded = aes.encode(rawDataField.getText().getBytes(StandardCharsets.UTF_8));
 
-        encryptedDataField.setText(Utils.bytesToHex(encoded));
+        encryptedDataField.setText(aes.bytesToHex(encoded));
     }
 
 
     public synchronized void decryptText(ActionEvent actionEvent) {
-        byte[] toDecrypt = Utils.hexStringToByteArray(encryptedDataField.getText());
+        byte[] toDecrypt = aes.hexStringToByteArray(encryptedDataField.getText());
         byte[] decrypted = aes.decode(toDecrypt);
-        String hex = Utils.bytesToHex(decrypted);
+        String hex = aes.bytesToHex(decrypted);
         decipheredAsBytesField.setText(hex);
         byte[] bytes = new byte[0];
         try {
@@ -97,7 +97,5 @@ public class ManualInputController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }
