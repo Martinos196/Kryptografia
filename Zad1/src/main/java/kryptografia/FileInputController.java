@@ -55,7 +55,7 @@ public class FileInputController implements Initializable {
 
     public void createAESInstance(ActionEvent actionEvent) throws Exception {
         // applyKey calls this method ( knowing the key we can create AES instance )
-        byte[] key = Utils.hexStringToByteArray(keyTextField.getText());
+        byte[] key = AES.hexStringToByteArray(keyTextField.getText());
         aes = new AES(key);
         encryptButton.setDisable(false);
         decryptButton.setDisable(false);
@@ -107,3 +107,4 @@ public class FileInputController implements Initializable {
         }
     }
 }
+
