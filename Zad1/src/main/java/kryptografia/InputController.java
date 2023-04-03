@@ -1,36 +1,36 @@
 package kryptografia;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class FileInputController implements Initializable {
-    public Label notificationEncryptionLabel;
-    public Button randomKeyButton;
+public class InputController implements Initializable {
+
     public TextField keyTextField;
     public Button applyKeyButton;
-    public Label notificationDecryptionLabel;
-    public MenuItem manualMenuItem;
+    public Button randomKeyButton;
     public Button decryptButton;
     public Button encryptButton;
+    public TextArea decipheredDataField;
+    public TextArea encryptedDataField;
+    public TextArea rawDataField;
+    public TextArea rawDataAsBytesArea;
+    public TextArea decipheredAsBytesField;
+
     AES aes;
 
     @Override
@@ -43,6 +43,13 @@ public class FileInputController implements Initializable {
         });
     }
 
+    public void createAES(ActionEvent actionEvent) throws Exception {
+        byte[] key = aes.hexStringToByteArray(keyTextField.getText());
+        aes = new AES(key);
+        encryptButton.setDisable(false);
+        decryptButton.setDisable(false);
+    }
+
     public void generateRandomKey(ActionEvent actionEvent) {
         String literals = "ABCDEF09876543210";
         Random random = new Random();
@@ -53,24 +60,27 @@ public class FileInputController implements Initializable {
         keyTextField.textProperty().set(builder.toString());
     }
 
-    public void createAESInstance(ActionEvent actionEvent) throws Exception {
-        // applyKey calls this method ( knowing the key we can create AES instance )
-        byte[] key = AES.hexStringToByteArray(keyTextField.getText());
-        aes = new AES(key);
-        encryptButton.setDisable(false);
-        decryptButton.setDisable(false);
+    public void encryptText(ActionEvent actionEvent) {
+
+        rawDataAsBytesArea.setText(aes.bytesToHex(rawDataField.getText().getBytes(StandardCharsets.UTF_8)));
+        byte[] encoded = aes.encode(rawDataField.getText().getBytes(StandardCharsets.UTF_8));
+
+        encryptedDataField.setText(aes.bytesToHex(encoded));
     }
 
-    public void changeSceneToManual(ActionEvent actionEvent) {
+
+    public synchronized void decryptText(ActionEvent actionEvent) {
+        byte[] toDecrypt = aes.hexStringToByteArray(encryptedDataField.getText());
+        byte[] decrypted = aes.decode(toDecrypt);
+        String hex = aes.bytesToHex(decrypted);
+        decipheredAsBytesField.setText(hex);
+        byte[] bytes = new byte[0];
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/manualView.fxml"));
-            Scene scene = new Scene(root);
-            Stage window = (Stage) randomKeyButton.getScene().getWindow();
-            window.setScene(scene);
-            window.show();
-        } catch (IOException e) {
+            bytes = Hex.decodeHex(hex.toCharArray());
+        } catch (DecoderException e) {
             e.printStackTrace();
         }
+        decipheredDataField.setText(new String(bytes, StandardCharsets.UTF_8));
     }
 
     public void chooseFileAndEncrypt(ActionEvent actionEvent) {
@@ -81,12 +91,8 @@ public class FileInputController implements Initializable {
             byte[] encodedBytes = aes.encode(fileBytes);
             File destination = fileChooser.showSaveDialog(new Stage());
             FileUtils.writeByteArrayToFile(destination, encodedBytes);
-            notificationEncryptionLabel.setTextFill(Color.web("#00FF00"));
-            notificationEncryptionLabel.setText("File encrypted successfully");
         } catch (IOException e) {
             e.printStackTrace();
-            notificationEncryptionLabel.setTextFill(Color.web("#FF0000"));
-            notificationEncryptionLabel.setText("Error occured :(");
         }
     }
 
@@ -98,13 +104,8 @@ public class FileInputController implements Initializable {
             byte[] decodedBytes = aes.decode(fileBytes);
             File destination = fileChooser.showSaveDialog(new Stage());
             FileUtils.writeByteArrayToFile(destination, decodedBytes);
-            notificationDecryptionLabel.setTextFill(Color.web("#00FF00"));
-            notificationDecryptionLabel.setText("File decrypted successfully");
         } catch (IOException e) {
             e.printStackTrace();
-            notificationDecryptionLabel.setTextFill(Color.web("#FF0000"));
-            notificationDecryptionLabel.setText("Error occured :(");
         }
     }
 }
-
