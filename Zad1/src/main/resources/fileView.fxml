@@ -26,42 +26,42 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="randomKeyButton" mnemonicParsing="false" onAction="#generateRandomKey" text="generate random key" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button fx:id="randomKeyButton" mnemonicParsing="false" onAction="#generateRandomKey" text="Generuj losowy klucz" GridPane.halignment="LEFT" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
       </Button>
-      <Label contentDisplay="CENTER" text="Enter key in hexadecimal format" GridPane.rowIndex="2">
+      <Label contentDisplay="CENTER" text="Wartosc klucza hexadecymalnie" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>
       </Label>
-      <TextField fx:id="keyTextField" prefHeight="26.0" prefWidth="212.0" promptText="04FF04FF04FF04FF04FF04FF04FF04FF" GridPane.rowIndex="3">
+      <TextField fx:id="keyTextField" prefHeight="26.0" prefWidth="212.0" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>
       </TextField>
       <MenuBar GridPane.columnSpan="2" GridPane.rowIndex="1">
         <menus>
-          <Menu mnemonicParsing="false" text="Mode">
+          <Menu mnemonicParsing="false" text="Tryb">
             <items>
-              <MenuItem fx:id="manualMenuItem" mnemonicParsing="false" onAction="#changeSceneToManual" text="Manual" />
-                  <MenuItem mnemonicParsing="false" text="File" />
+              <MenuItem fx:id="manualMenuItem" mnemonicParsing="false" onAction="#changeSceneToManual" text="Recznie" />
+                  <MenuItem mnemonicParsing="false" text="Plik" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
-      <Button fx:id="applyKeyButton" disable="true" mnemonicParsing="false" onAction="#createAESInstance" text="apply key" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Button fx:id="applyKeyButton" disable="true" mnemonicParsing="false" onAction="#createAESInstance" text="Zastosuj klucz" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="encryptButton" mnemonicParsing="false" onAction="#chooseFileAndEncrypt" text="encrypt file" GridPane.rowIndex="4">
+      <Button fx:id="encryptButton" mnemonicParsing="false" onAction="#chooseFileAndEncrypt" text="Szyfruj plik" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="decryptButton" mnemonicParsing="false" onAction="#chooseFileAndDecrypt" text="decrypt file" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <Button fx:id="decryptButton" mnemonicParsing="false" onAction="#chooseFileAndDecrypt" text="Deszyfruj plik" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
