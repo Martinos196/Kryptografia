@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7f60ad5d-656a-4004-9139-ce979e78c967" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Zad1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad1/src/main/resources/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Zad1/src/main/resources/View.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad1/target/classes/fileView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Zad1/target/classes/fileView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad1/target/classes/manualView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../Zad1/target/classes/manualView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Zad1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Zad1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Zad1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Zad1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Zad1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/ElGamal.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/out/production/ElGamal/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/out/production/ElGamal/sample/ElGamal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/out/production/ElGamal/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/out/production/ElGamal/sample/Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/out/production/ElGamal/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/src/sample/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/src/sample/ElGamal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/src/sample/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/Anon/src/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/out/production/Anon/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/out/production/Anon/sample/ElGamal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/out/production/Anon/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Anon/out/production/Anon/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nowy dokument tekstowy.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../../../../../../Program Files/apache-maven-3.8.6" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PkZZIzNitPZ1sgvk7CRWa3AJWa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Marcin/Desktop/Studia/Semestr4/kryptografia/Kryptografia/Zad2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Marcin\Desktop\Studia\Semestr4\kryptografia\Kryptografia\Zad2\src\main\java\elgamal" />
+      <recent name="C:\Users\Marcin\Desktop\Studia\Semestr4\kryptografia\Kryptografia\Zad2\src\main\resources" />
+      <recent name="C:\Users\Marcin\Desktop\Studia\Semestr4\kryptografia\Kryptografia\Zad2\src\main\java" />
+      <recent name="C:\Users\Marcin\Desktop\Studia\Semestr4\kryptografia\Kryptografia\Zad2\src\sample" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="elgamal.Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="elgamal.Main" />
+      <module name="ElGamal" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Marcin\Downloads\javafx-sdk-19\lib --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f60ad5d-656a-4004-9139-ce979e78c967" name="Changes" comment="" />
+      <created>1684003094389</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684003094389</updated>
+      <workItem from="1684003095479" duration="369000" />
+      <workItem from="1684003467917" duration="1132000" />
+      <workItem from="1684005082073" duration="40000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
