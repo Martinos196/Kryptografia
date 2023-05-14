@@ -14,30 +14,30 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="37.0" prefHeight="19.0" prefWidth="120.0" text="Klucz publiczny g:">
+      <Label layoutX="27.0" layoutY="37.0" prefHeight="17.0" prefWidth="120.0" text="Klucz publiczny p:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="68.0" prefHeight="19.0" prefWidth="120.0" text="Klucz publiczny h:">
+      <Label layoutX="27.0" layoutY="68.0" prefHeight="19.0" prefWidth="120.0" text="Klucz publiczny g:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="97.0" prefHeight="19.0" prefWidth="120.0" text="Klucz prywatny a:">
+      <Label layoutX="27.0" layoutY="97.0" prefHeight="19.0" prefWidth="120.0" text="Klucz publiczny h:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="keyG" layoutX="143.0" layoutY="34.0" prefHeight="25.0" prefWidth="701.0" />
-      <TextField fx:id="keyH" layoutX="143.0" layoutY="65.0" prefHeight="25.0" prefWidth="701.0" />
-      <TextField fx:id="keyA" layoutX="143.0" layoutY="94.0" prefHeight="25.0" prefWidth="701.0" />
-      <Label layoutX="27.0" layoutY="128.0" prefHeight="17.0" prefWidth="120.0" text="MOD N">
+      <Label layoutX="27.0" layoutY="128.0" prefHeight="19.0" prefWidth="120.0" text="Klucz prywatny a:">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="modN" layoutX="143.0" layoutY="124.0" prefHeight="25.0" prefWidth="701.0" />
+      <TextField fx:id="keyP" layoutX="143.0" layoutY="34.0" prefHeight="25.0" prefWidth="701.0" />
+      <TextField fx:id="keyG" layoutX="143.0" layoutY="65.0" prefHeight="25.0" prefWidth="701.0" />
+      <TextField fx:id="keyH" layoutX="143.0" layoutY="94.0" prefHeight="25.0" prefWidth="701.0" />
+      <TextField fx:id="keyA" layoutX="143.0" layoutY="124.0" prefHeight="25.0" prefWidth="701.0" />
       <Label layoutX="27.0" layoutY="159.0" prefHeight="19.0" prefWidth="174.0" text="Wygeneruj wartości kluczy:">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -60,12 +60,12 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="signButton" layoutX="387.0" layoutY="397.0" mnemonicParsing="false" onAction="#signText" prefHeight="25.0" prefWidth="99.0" text="Podpisuj-&gt;">
+      <Button fx:id="signButton" layoutX="387.0" layoutY="397.0" mnemonicParsing="false" onAction="#signText" prefHeight="25.0" prefWidth="99.0" text="Podpisuj">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="verifyButton" layoutX="387.0" layoutY="436.0" mnemonicParsing="false" onAction="#verifyText" prefHeight="25.0" prefWidth="99.0" text="&lt;-Weryfikuj">
+      <Button fx:id="verifyButton" layoutX="387.0" layoutY="436.0" mnemonicParsing="false" onAction="#verifyText" prefHeight="25.0" prefWidth="99.0" text="Weryfikuj">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

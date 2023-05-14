@@ -9,8 +9,8 @@ public class ElGamal {
     private BigInteger g;
     private BigInteger h;
     private BigInteger a;
-    private BigInteger N;
-    private BigInteger Nn1;
+    private BigInteger P;
+    private BigInteger Pm1;
     private BigInteger r;
     private BigInteger rn1;
     private final MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
@@ -33,20 +33,20 @@ public class ElGamal {
         return a;
     }
 
-    public BigInteger getN() {
-        return N;
+    public BigInteger getP() {
+        return P;
     }
 
-    public BigInteger getNn1() {
-        return Nn1;
+    public BigInteger getPm1() {
+        return Pm1;
     }
 
     public void GenerujKlucz() {
-        N = BigInteger.probablePrime(keyLength + 2, random);
+        P = BigInteger.probablePrime(keyLength + 2, random);
         a = new BigInteger(keyLength, random);
         g = new BigInteger(keyLength, random);
-        h = g.modPow(a, N);
-        Nn1 = N.subtract(BigInteger.ONE);
+        h = g.modPow(a, P);
+        Pm1 = P.subtract(BigInteger.ONE);
     }
 
     public BigInteger[] podpis(byte[] text) {
@@ -55,16 +55,16 @@ public class ElGamal {
         r = BigInteger.probablePrime(keyLength, random);
         BigInteger[] wynik = new BigInteger[2];
         while(true) {
-            if(r.gcd(Nn1).equals(BigInteger.ONE)) {
+            if(r.gcd(Pm1).equals(BigInteger.ONE)) {
                 break;
             }
             else {
                 r = r.nextProbablePrime();
             }
         }
-        rn1 = r.modInverse(Nn1);
-        BigInteger s1 = g.modPow(r, N);
-        BigInteger s2 = podpis.subtract(a.multiply(s1)).multiply(rn1).mod(Nn1);
+        rn1 = r.modInverse(Pm1);
+        BigInteger s1 = g.modPow(r, P);
+        BigInteger s2 = podpis.subtract(a.multiply(s1)).multiply(rn1).mod(Pm1);
         wynik[0] = s1;
         wynik[1] = s2;
         return wynik;
@@ -88,8 +88,8 @@ public class ElGamal {
     public boolean weryfikacja(byte[] publicText, BigInteger[] signature) {
         messageDigest.update(publicText);
         BigInteger hash = new BigInteger(1, messageDigest.digest());
-        BigInteger wynik1 = g.modPow(hash, N);
-        BigInteger wynik2 = h.modPow(signature[0], N).multiply(signature[0].modPow(signature[1], N)).mod(N);
+        BigInteger wynik1 = g.modPow(hash, P);
+        BigInteger wynik2 = h.modPow(signature[0], P).multiply(signature[0].modPow(signature[1], P)).mod(P);
         return wynik1.compareTo(wynik2) == 0;
     }
 }

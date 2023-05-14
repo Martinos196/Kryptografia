@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class Controller extends Window {
     public TextField keyG = new TextField();
     public TextField keyH = new TextField();
-    public TextField modN = new TextField();
+    public TextField keyP = new TextField();
     public TextField keyA = new TextField();
 
     public TextArea signatureArea = new TextArea();
@@ -43,12 +43,12 @@ public class Controller extends Window {
         elGamal.GenerujKlucz();
         keyA.setText(elGamal.getA().toString(16));
         keyH.setText(elGamal.getH().toString(16));
-        modN.setText(elGamal.getNn1().toString(16));
+        keyP.setText(elGamal.getPm1().toString(16));
         keyG.setText(elGamal.getG().toString(16));
     }
 
     public void signText() {
-        if(keyA.getText().equals("") || keyG.getText().equals("") || keyH.getText().equals("") || modN.getText().equals("")) {
+        if(keyA.getText().equals("") || keyG.getText().equals("") || keyH.getText().equals("") || keyP.getText().equals("")) {
             generate();
         }
         BigInteger[] result = elGamal.podpis(publicText.getText().getBytes());
@@ -56,7 +56,7 @@ public class Controller extends Window {
     }
 
     public void verifyText() {
-        if(keyA.getText().equals("") || keyG.getText().equals("") || keyH.getText().equals("") || modN.getText().equals("")) {
+        if(keyA.getText().equals("") || keyG.getText().equals("") || keyH.getText().equals("") || keyP.getText().equals("")) {
             generate();
         }
         BigInteger[] signature = Arrays.stream(signatureArea.getText()
@@ -79,7 +79,7 @@ public class Controller extends Window {
 
     public void signFile() {
         try {
-            if(keyA.getText().equals("") || keyG.getText().equals("") || keyH.getText().equals("") || modN.getText().equals("")) {
+            if(keyA.getText().equals("") || keyG.getText().equals("") || keyH.getText().equals("") || keyP.getText().equals("")) {
                 generate();
             }
             fileChooser.setTitle("Wybierz plik do podpisania");
@@ -104,7 +104,7 @@ public class Controller extends Window {
 
     public void verifyFile() {
         try {
-            if(keyA.getText().equals("") || keyG.getText().equals("") || keyH.getText().equals("") || modN.getText().equals("")) {
+            if(keyA.getText().equals("") || keyG.getText().equals("") || keyH.getText().equals("") || keyP.getText().equals("")) {
                 generate();
             }
             fileChooser.setTitle("Wybierz plik, który był podpisany");
