@@ -47,6 +47,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/elgamal/ElGamal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elgamal/ElGamal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/elgamal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/elgamal/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/elgamal/ElGamal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/elgamal/ElGamal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,6 +122,7 @@
       <workItem from="1684008621998" duration="1225000" />
       <workItem from="1684089150069" duration="64000" />
       <workItem from="1684089305346" duration="715000" />
+      <workItem from="1684183437154" duration="6359000" />
     </task>
     <servers />
   </component>

@@ -14,7 +14,7 @@ public class ElGamal {
     private BigInteger r;
     private BigInteger rn1;
     private final MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
-    private final int keyLength = 2048;
+    private final int keyLength = 512;
     private final Random random = new SecureRandom();
 
     public ElGamal() throws NoSuchAlgorithmException {
@@ -43,7 +43,7 @@ public class ElGamal {
 
     public void GenerujKlucz() {
         P = BigInteger.probablePrime(keyLength + 2, random);
-        a = new BigInteger(keyLength, random);
+        a = new BigInteger(P.bitLength() - 1, random).mod(P.subtract(BigInteger.ONE)).add(BigInteger.ONE);
         g = new BigInteger(keyLength, random);
         h = g.modPow(a, P);
         Pm1 = P.subtract(BigInteger.ONE);
@@ -52,7 +52,7 @@ public class ElGamal {
     public BigInteger[] podpis(byte[] text) {
         messageDigest.update(text);
         BigInteger podpis = new BigInteger(1, messageDigest.digest());
-        r = BigInteger.probablePrime(keyLength, random);
+        r = new BigInteger(P.bitLength() - 1, random).mod(P.subtract(BigInteger.ONE)).add(BigInteger.ONE);
         BigInteger[] wynik = new BigInteger[2];
         while(true) {
             if(r.gcd(Pm1).equals(BigInteger.ONE)) {
